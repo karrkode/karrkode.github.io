@@ -1,0 +1,55 @@
+/* Border box declaration 
+https://www.paulirish.com/2012/box-sizing-border-box-ftw/ */
+/* https://coolors.co/000000-001427-7f8783-bf0603-8d0801 */
+html {
+	box-sizing: border-box;
+}
+
+/* inherit border-box on all elements in the universe and before and after
+ */
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+}
+
+a {
+	text-decoration: none;
+}
+a:visited {
+	text-decoration: none;
+}
+
+body {
+	font-family: Arial, Geneva, sans-serif;
+}
+.wrapper {
+	width: 100%;
+	margin: 0 auto;
+	float: none;
+	background-color: #7f8783;
+}
+
+.row::after {
+	content: '';
+	display: table;
+	clear: both;
+}
+
+[class*='col-'] {
+	width: 100%;
+	min-height: 1px;
+	border: 1px solid black;
+	text-align: center;
+}
+
+@media only screen and (min-width: 480px) {
+	[class*='col-'] {
+		margin-right: 0;
+		min-height: 1px;
+		float: left;
+	}
+	.col-2 {
+		width: 50%;
+	}
+}
